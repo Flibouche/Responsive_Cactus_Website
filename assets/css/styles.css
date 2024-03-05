@@ -1,5 +1,5 @@
 /*========================== GOOGLE FONTS =======================*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*========================== VARIABLES CSS ======================*/
 :root {
@@ -15,7 +15,7 @@
     --black-color: hsl(228, 6%, 4%);
     --body-color: hsl(228, 6%, 8%);
     --containter-color: hsl(228, 6%, 12%);
-    --shadow-img: 0 0 48px hsla(93, 54%, 54%, .4;
+    --shadow-img: 0 0 48px hsla(93, 54%, 54%, .4);
     --gradient-card: linear-gradient(180deg,
                                     hsla(93, 8%, 8%)
                                     hsla(93, 40%, 30%));
@@ -116,13 +116,94 @@ img {
 }
 
 /*========================== HEADER & NAV ======================*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-color: transparent;
+    z-index: var(--z-fixed);
+}
 
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,
+.nav__close,
+.nav__toggle,
+.nav__actions {
+    display: flex;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.nav__logo {
+    font-weight: var(--font-semi-bold);
+    column-gap: .25rem;
+    align-items: center;
+}
+
+.nav__logo i {
+    color: var(--first-color);
+    font-size: 1.25rem;
+    font-weight: initial;
+}
+
+.nav__actions {
+    font-size: 1.25rem;
+    column-gap: .5rem;
+    align-items: center;
+}
 
 /* Navigation for mobile devices */
+@media screen and (max-width: 1150px){
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: hsla(228, 24%, 6%, .2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        width: 80%;
+        height: 100%;
+        padding: 6rem 3rem 0;
+        transition: right .4s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__close {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.5rem;
+    font-size: 1.25rem;
+}
 
 
 /* Show menu */
-
+.show-menu {
+    right: 0;
+}
 
 /* Add blur header */
 
